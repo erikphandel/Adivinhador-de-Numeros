@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Adivinhação</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <h4>Jogo de Adivinhação</h4>
+    <p>Tente adivinhar o número secreto! Digite um número de 1 a 100. Você tem três tentativas. Boa sorte!</p>
+    <form>
+        <input id="numero" type="number" name="numero" min="1" max="100"><br>
+        <button type="button" onclick="obterNumero()">Chutar</button>
+    </form>
+    <p id="tentativas">Você tem 3 tentativas.</p>
+    <p id="mensagens"></p>
+</body>
+</html>
