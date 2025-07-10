@@ -1,16 +1,20 @@
+// Gerar Número Secreto
 const numeroSecreto = gerarNumero(1,100)
 function gerarNumero(min, max) {
   return Math.floor(Math.random() * (max - min) ) + 1;
-}
-console.log(numeroSecreto)
-
+};
+console.log(numeroSecreto);
+const tentativas = 3;
 // Funções utilitárias
 const obterElemento = (id)  => document.getElementById(id);
-const tentativas = parseFloat(obterElemento('tentativas').value);
-console.log(tentativas)
+obterElemento ('tentativas').textContent = tentativas
 
 // Obter valor inputado
-const obterNumero = () => parseInt(obterElemento('numero').value);
+function obterNumero () {
+    const inputElement = obterElemento('numero');
+    const numeroInputado = obterNumero();
+};
+console.log (numeroInputado);
 
 // Comparar valor inputado com número secreto
 function compararNumero () {
@@ -22,10 +26,10 @@ function compararNumero () {
 
 
 // PASSOS
-// 1. Gerar numero secreto
+// 1. Gerar numero secreto - CONCLUIDO
 // 2. Obter número inputado pelo usuário
 // 3. Comparar número inputado com número secreto
-// 4. Se número inputador for número secreto, emitir mensagem de vitória
+// 4. Se número inputado for número secreto, emitir mensagem de vitória
 // 5. Se número inputado não for número secreto, emitir mensagem de erro
 // 5.1 Diminuir número de tentativas.
 // 6. Caso o número de tentativas acabe, emitir mensagem de derrota e revelar número secreto.
