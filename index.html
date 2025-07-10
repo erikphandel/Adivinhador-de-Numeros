@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo de Adivinhação</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<header>
     <h4>Jogo de Adivinhação</h4>
+</header>
+<body>
+
     <p>Tente adivinhar o número secreto! Digite um número de 1 a 100. Você tem três tentativas. Boa sorte!</p>
     <form>
-        <input id="numero" type="number" name="numero" min="1" max="100"><br>
+        <input id="numero" type="number" name="numero" min="1" max="100"><br><br>
         <button id="botao" type="button" onclick="obterNumero()">Chutar</button>
     </form>
     <p>Você tem <strong id="tentativas"></strong> tentativas.</p>
