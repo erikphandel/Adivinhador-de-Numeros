@@ -3,25 +3,36 @@ const numeroSecreto = gerarNumero(1,100)
 function gerarNumero(min, max) {
   return Math.floor(Math.random() * (max - min) ) + 1;
 };
-console.log(numeroSecreto);
-const tentativas = 3;
+console.log("O número secreto é:", numeroSecreto);
+let tentativas = 3;
 // Funções utilitárias
 const obterElemento = (id)  => document.getElementById(id);
+let mensagem = obterElemento('mensagem');
 obterElemento ('tentativas').textContent = tentativas
+let jogoFinalizado = false
 
 // Obter valor inputado
 function obterNumero () {
+    if (jogoFinalizado) return;
+
     const numeroInputado = parseInt(obterElemento('numero').value);
-    console.log("Número inputado: ", numeroInputado)
-    return numeroInputado
+    if (numeroInputado === numeroSecreto) {
+        mensagem.textContent = "Parabéns! Você adivinhou o número secreto.";
+        jogoFinalizado = true;
+    } else if (tentativas === 0) {
+        mensagem.textContent = "Você perdeu! O número secreto era ", numeroSecreto;
+        jogoFinalizado = true;
+    } else if (numeroInputado < numeroSecreto) {
+        mensagem.textContent = "O número secreto é maior do que isso!";
+    } else {
+        mensagem.textContent = "O número secreto é menor do que isso!";
+    };
+
+    tentativas--;
+    obterElemento ('tentativas').textContent = tentativas;
 };
 
-// Comparar valor inputado com número secreto
-function compararNumero () {
-    if (numeroSecreto = obterNumero) {
-        document.getElementById("mensagens")
-    }
-}
+
 
 
 
