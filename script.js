@@ -10,6 +10,13 @@ const obterElemento = (id)  => document.getElementById(id);
 let mensagem = obterElemento('mensagem');
 obterElemento ('tentativas').textContent = tentativas
 let jogoFinalizado = false
+function mostrarBotaoReinicio() {
+    obterElemento('reiniciar').style.display = 'inline';
+}
+function reiniciarJogo() {
+    window.location.reload();
+}
+
 
 // Obter valor inputado
 function obterNumero () {
@@ -39,7 +46,10 @@ function obterNumero () {
         obterElemento('numero').disabled = true;
         obterElemento('botao').disabled = true;
     }
+
+    if (jogoFinalizado) mostrarBotaoReinicio ();
 };
+
 
 
 
