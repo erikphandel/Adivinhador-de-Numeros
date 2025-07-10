@@ -16,6 +16,11 @@ function obterNumero () {
     if (jogoFinalizado) return
 
     const numeroInputado = parseInt(obterElemento('numero').value);
+    if (numeroInputado < 1 || numeroInputado > 100 || isNaN(numeroInputado)) {
+    mensagem.textContent = "Por favor, digite um número entre 1 e 100.";
+    return;
+}
+
     if (numeroInputado === numeroSecreto) {
         mensagem.textContent = "Parabéns! Você adivinhou o número secreto. Atualize a página para jogar de novo.";
         jogoFinalizado = true;
@@ -31,6 +36,8 @@ function obterNumero () {
     if (tentativas === 0 && !jogoFinalizado) {
         mensagem.textContent = "Você perdeu! O número secreto era " + numeroSecreto + ". Atualize a página para jogar de novo.";
         jogoFinalizado = true;
+        obterElemento('numero').disabled = true;
+        obterElemento('botao').disabled = true;
     }
 };
 
