@@ -13,14 +13,11 @@ let jogoFinalizado = false
 
 // Obter valor inputado
 function obterNumero () {
-    if (jogoFinalizado) return;
+    if (jogoFinalizado) return
 
     const numeroInputado = parseInt(obterElemento('numero').value);
     if (numeroInputado === numeroSecreto) {
-        mensagem.textContent = "Parabéns! Você adivinhou o número secreto.";
-        jogoFinalizado = true;
-    } else if (tentativas === 0) {
-        mensagem.textContent = "Você perdeu! O número secreto era ", numeroSecreto;
+        mensagem.textContent = "Parabéns! Você adivinhou o número secreto. Atualize a página para jogar de novo.";
         jogoFinalizado = true;
     } else if (numeroInputado < numeroSecreto) {
         mensagem.textContent = "O número secreto é maior do que isso!";
@@ -30,7 +27,14 @@ function obterNumero () {
 
     tentativas--;
     obterElemento ('tentativas').textContent = tentativas;
+    
+    if (tentativas === 0 && !jogoFinalizado) {
+        mensagem.textContent = "Você perdeu! O número secreto era " + numeroSecreto + ". Atualize a página para jogar de novo.";
+        jogoFinalizado = true;
+    }
 };
+
+
 
 
 
