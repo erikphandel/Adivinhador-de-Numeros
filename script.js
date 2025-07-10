@@ -11,9 +11,9 @@ obterElemento ('tentativas').textContent = tentativas
 
 // Obter valor inputado
 function obterNumero () {
-    const inputElement = obterElemento('numero');
-    const numeroInputado = obterNumero();
+    const inputElement = parseInt(obterElemento('numero').value);
 };
+const numeroInputado = obterElemento()
 console.log (numeroInputado);
 
 // Comparar valor inputado com número secreto
