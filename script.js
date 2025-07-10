@@ -11,10 +11,10 @@ obterElemento ('tentativas').textContent = tentativas
 
 // Obter valor inputado
 function obterNumero () {
-    const inputElement = parseInt(obterElemento('numero').value);
+    const numeroInputado = parseInt(obterElemento('numero').value);
+    console.log("Número inputado: ", numeroInputado)
+    return numeroInputado
 };
-const numeroInputado = obterElemento()
-console.log (numeroInputado);
 
 // Comparar valor inputado com número secreto
 function compararNumero () {
@@ -27,7 +27,7 @@ function compararNumero () {
 
 // PASSOS
 // 1. Gerar numero secreto - CONCLUIDO
-// 2. Obter número inputado pelo usuário
+// 2. Obter número inputado pelo usuário - CONCLUÍDO
 // 3. Comparar número inputado com número secreto
 // 4. Se número inputado for número secreto, emitir mensagem de vitória
 // 5. Se número inputado não for número secreto, emitir mensagem de erro
